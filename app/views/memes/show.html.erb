@@ -1,8 +1,12 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Title:</strong>
+  <strong>Meme:</strong>
   <%= @meme.title %>
+  <br>
+  Meme by: <%= @meme.user.username %>
+  <br>
+  <%= image_tag @meme.image.url(:medium) %>
 </p>
 
 <%= link_to 'Edit', edit_meme_path(@meme) %> |

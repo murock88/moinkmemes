@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
+gem 'paperclip', '~> 4.3', '>= 4.3.6'
 gem 'simple_form', '~> 3.2', '>= 3.2.1'
 gem 'devise', '~> 4.2'
 gem 'rails', '4.2.5'
