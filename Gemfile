@@ -1,7 +1,8 @@
 source 'https://rubygems.org'
 
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
-gem 'aws-sdk', '~> 2.5', '>= 2.5.5' #for uploading to amzaons
+gem 'aws-sdk', '~> 2.3'
+gem 'aws-sdk-v1'       #for uploading to amzaons
 gem 'paperclip', '~> 4.3', '>= 4.3.6'
 gem 'simple_form', '~> 3.2', '>= 3.2.1'
 gem 'devise', '~> 4.2'
