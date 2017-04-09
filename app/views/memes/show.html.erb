@@ -17,7 +17,8 @@
 
  <br>
 <%= link_to 'Back', memes_path %> 
-<% if can? :update, @meme %> |
+
+
 <%= link_to 'Edit', edit_meme_path(@meme) %> |
 <% end %>
 <% if can? :destroy, @meme %>
