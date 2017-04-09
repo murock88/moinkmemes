@@ -9,5 +9,17 @@
   <%= image_tag @meme.image.url(:medium) %>
 </p>
 
+
+  <%= render @meme.comments %>
+  <br>
+  
+  <%= render 'comments/form' %>
+
+ <br>
+<%= link_to 'Back', memes_path %> 
+<% if can? :update, @meme %> |
 <%= link_to 'Edit', edit_meme_path(@meme) %> |
-<%= link_to 'Back', memes_path %>
+<% end %>
+<% if can? :destroy, @meme %>
+<td><%= link_to 'Destroy', @meme, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+<% end %>

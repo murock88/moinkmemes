@@ -1,0 +1,19 @@
+<h1>Random Meme Place Holder</h1>
+
+     <% @meme = Meme.all.shuffle[0..0] %>
+       <% @meme.each do |meme| %>
+      
+       <a class="large" href="#">
+       <%= image_tag meme.image.url(:large) %>
+       </a>
+       <strong><td><%= meme.title %></td> 
+       <br>
+       Meme uploaded by:<%= meme.user.username %></strong>
+       <br>
+         <td><%= link_to 'Show', meme %></td>
+         <% if current_user %>
+         <td><%= link_to 'Edit', edit_meme_path(meme) %></td>
+         <td><%= link_to 'Destroy', meme, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </div>
+       <% end %>
+       <% end %>

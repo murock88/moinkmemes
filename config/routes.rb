@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
   devise_for :users, :controllers => { registrations: 'registrations' }
-  resources :memes
+  resources :memes do
+    resources :comments
+  end
+  
+  
+  
   root 'pages#home' 
   get 'pages/mymeme'
-end
+  get 'pages/random'
+  end

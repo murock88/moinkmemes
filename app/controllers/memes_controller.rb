@@ -40,6 +40,7 @@ class MemesController < ApplicationController
   # PATCH/PUT /memes/1s
   # PATCH/PUT /memes/1.json
   def update
+    authorize! :update, @meme
     respond_to do |format|
       if @meme.update(meme_params)
         format.html { redirect_to @meme, notice: 'Meme was successfully updated.' }
@@ -54,6 +55,7 @@ class MemesController < ApplicationController
   # DELETE /memes/1
   # DELETE /memes/1.json
   def destroy
+    authorize! :destroy, @meme
     @meme.destroy
     respond_to do |format|
       format.html { redirect_to memes_url, notice: 'Meme was successfully destroyed.' }
@@ -69,6 +71,6 @@ class MemesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def meme_params
-      params.require(:meme).permit(:title, :image)
+      params.require(:meme).permit(:title, :image, :body)
     end
 end

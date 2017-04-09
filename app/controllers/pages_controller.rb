@@ -5,4 +5,7 @@ class PagesController < ApplicationController
     
     def mymeme
     end
+    
+    def random
+    end
 end
